@@ -1,0 +1,9 @@
+[Unit]
+Description=0mq broker for MCollective
+After=network-online.target
+
+[Service]
+Type=simple
+EnvironmentFile=/etc/sysconfig/mc0d
+ExecStart=/opt/mc0d/bin/mc0d --curve-private-key $MC0D_KEY --logger-config $MC0D_LOG
+Restart=always

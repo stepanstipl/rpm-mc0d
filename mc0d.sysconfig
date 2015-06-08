@@ -1,0 +1,4 @@
+MC0D_KEY=/etc/mc0d/private.key
+MC0D_LOG=/etc/mc0d/logger.config
+MC0D_UID='mc0d'
+MC0D_GID='mc0d'
