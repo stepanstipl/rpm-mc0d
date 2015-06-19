@@ -1,11 +1,16 @@
 # rpm-mc0d
-Rpm packages for mc0d
+RPM packages for mc0d - https://github.com/puppetlabs/mc0d, MCollective 0mq broker. 
+
+*Currently building from my fork https://github.com/stepanstipl/mc0d which has some fixes for CentOS and 0mq 4.1*
+
+Interesting files
+-----------------
+- **mc0d.spec** - Spec file for mc0d
+- **zeromq.spec** - Spec file for 0mq library, needed to build with curve encryption/libsodium support, updated one published by Saltstack team.
 
 Usage
 -----
-Pretty much clone this repo and run `vagrant up`. Provisioning step of Vagrant
-build will take care of building the specs. Use any CentOS 7 machine in
-Vagrantfile.
+Pretty much clone this repo and run `vagrant up` and grab zeromq and mc0d RPMs from `output` folder. Provisioning step of Vagrant build will take care of building the specs. Use any CentOS 7 machine in Vagrantfile.
 
 Issues and contibuting
 ----------------------
