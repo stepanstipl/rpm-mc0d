@@ -4,7 +4,7 @@
 
 Name:           mc0d
 Version:        0.0.3
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        0mq Mcollective broker
 License:        Apache License 2.0
 Group: 		System Environment/Daemons

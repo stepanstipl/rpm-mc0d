@@ -5,7 +5,7 @@ cd /tmp
 wget http://dl.fedoraproject.org/pub/epel/7/x86_64/e/epel-release-7-5.noarch.rpm
 rpm -ivh epel-release-7-5.noarch.rpm
 yum install -y rpm-build gcc-c++ git rpmdevtools yum-utils
-mmkdir -p ~/rpmbuild/{BUILD,RPMS,SOURCES,SPECS,SRPMS}Kdir -p ~/rpmbuild/{BUILD,RPMS,SOURCES,SPECS,SRPMS}
+mkdir -p ~/rpmbuild/{BUILD,RPMS,SOURCES,SPECS,SRPMS}Kdir -p ~/rpmbuild/{BUILD,RPMS,SOURCES,SPECS,SRPMS}
 
 # Install cmake EXTRA - WE NEED AT LEAST 2.8.12
 wget http://dl.fedoraproject.org/pub/fedora/linux/releases/20/Everything/x86_64/os/Packages/c/cmake-2.8.12.1-1.fc20.x86_64.rpm
