@@ -8,7 +8,7 @@ yum install -y rpm-build gcc-c++ git rpmdevtools yum-utils
 mkdir -p ~/rpmbuild/{BUILD,RPMS,SOURCES,SPECS,SRPMS}Kdir -p ~/rpmbuild/{BUILD,RPMS,SOURCES,SPECS,SRPMS}
 
 # Install cmake EXTRA - WE NEED AT LEAST 2.8.12
-wget http://dl.fedoraproject.org/pub/fedora/linux/releases/20/Everything/x86_64/os/Packages/c/cmake-2.8.12.1-1.fc20.x86_64.rpm
+wget http://archives.fedoraproject.org/pub/archive/fedora/linux/releases/20/Everything/x86_64/os/Packages/c/cmake-2.8.12.1-1.fc20.x86_64.rpm
 yum install -y cmake-2.8.12.1-1.fc20.x86_64.rpm
 
 # Assume we're running Vagrant form the rpm-mc0d repo and so we have all the files in /vagrant
@@ -22,9 +22,10 @@ spectool -g -R zeromq.spec
 rpmbuild -ba --with libsodium zeromq.spec
 
 # We copy all output artefacts here
+rm -rf output
 mkdir output
 cp ~/rpmbuild/RPMS/x86_64/{zeromq-*.rpm,zeromq-devel-*.rpm} ./output/
-yum install -y ./output/zeromq*.rpm 
+yum install -y ./output/zeromq*.rpm
 
 # And finally build mc0d rpm
 yum-builddep -y mc0d.spec

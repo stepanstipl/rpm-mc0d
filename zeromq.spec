@@ -1,5 +1,5 @@
 Name:           zeromq
-Version:        4.1.1
+Version:        4.0.7
 Release:        1%{?dist}
 Summary:        Software library for fast, message-based applications
 
@@ -89,8 +89,8 @@ find %{buildroot} -name \*.la -print0 | xargs -r0 rm -v
 %{_libdir}/libzmq.so
 %{_libdir}/pkgconfig/libzmq.pc
 %{_includedir}/zmq*
-#%{_mandir}/man3/zmq*
-#%{_mandir}/man7/zmq*
+%{_mandir}/man3/zmq*
+%{_mandir}/man7/zmq*
 
 
 %changelog
