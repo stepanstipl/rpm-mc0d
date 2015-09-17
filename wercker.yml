@@ -3,7 +3,31 @@ build:
   steps:
     - script:
         name: Build script
-        code: ls -al
-    - script:
-        name: Build script
         code: chmod 555 build-wercker.sh && ./build-wercker.sh
+deploy:
+  steps:
+    - script:
+        name: Get version
+        code: export APP_VERSION=$(rpm -qip output/mc0d-*.rpm  | grep Version | awk '{print $3}')
+    - github-create-release:
+        token: $GITHUB_TOKEN
+        tag: $APP_VERSION
+        prerelease: true
+    - script:
+        name: Get mc0d file
+        code: export RPM_MC0D=output/$(basename output/mc0d-*.rpm)
+    - github-upload-asset:
+        token: $GITHUB_TOKEN
+        file: $RPM_MC0D
+    - script:
+        name: Get zeromq file
+        code: export RPM_ZEROMQ=output/$(basename output/zeromq-4*.rpm)
+    - github-upload-asset:
+        token: $GITHUB_TOKEN
+        file: $RPM_ZEROMQ
+    - script:
+        name: Get zeromq-devel file
+        code: export RPM_ZEROMQ_DEVEL=output/$(basename output/zeromq-devel-4*.rpm)
+    - github-upload-asset:
+        token: $GITHUB_TOKEN
+        file: $RPM_ZEROMQ_DEVEL
