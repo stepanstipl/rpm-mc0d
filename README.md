@@ -1,3 +1,4 @@
+[![wercker status](https://app.wercker.com/status/69ac6e7720dc29fb400f1cac13f4e523/s/master "wercker status")](https://app.wercker.com/project/bykey/69ac6e7720dc29fb400f1cac13f4e523)
 # rpm-mc0d
 RPM packages for mc0d - https://github.com/puppetlabs/mc0d, MCollective 0mq broker. 
 
