@@ -1,5 +1,4 @@
 #!/bin/bash
-cd /tmp
 
 # General build tools and environment
 wget http://dl.fedoraproject.org/pub/epel/7/x86_64/e/epel-release-7-5.noarch.rpm
@@ -10,9 +9,6 @@ mkdir -p ~/rpmbuild/{BUILD,RPMS,SOURCES,SPECS,SRPMS}Kdir -p ~/rpmbuild/{BUILD,RP
 # Install cmake EXTRA - WE NEED AT LEAST 2.8.12
 wget http://archives.fedoraproject.org/pub/archive/fedora/linux/releases/20/Everything/x86_64/os/Packages/c/cmake-2.8.12.1-1.fc20.x86_64.rpm
 yum install -y cmake-2.8.12.1-1.fc20.x86_64.rpm
-
-# Assume we're running Vagrant form the rpm-mc0d repo and so we have all the files in /vagrant
-cd /vagrant
 
 # Simplified build process ZeroMQ with libsodium / curve enabled
 yum-builddep -y zeromq.spec

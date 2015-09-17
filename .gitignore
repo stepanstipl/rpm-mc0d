@@ -1,2 +1,5 @@
 .vagrant
 output
+_projects
+_steps
+_builds

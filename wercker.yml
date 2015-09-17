@@ -1,0 +1,9 @@
+box: stepanstipl/centos7-rpm-devtools
+build:
+  steps:
+    - script:
+        name: Build script
+        code: ls -al
+    - script:
+        name: Build script
+        code: chmod 555 build-wercker.sh && ./build-wercker.sh
