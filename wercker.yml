@@ -8,7 +8,7 @@ deploy:
   steps:
     - script:
         name: Get version
-        code: export APP_VERSION=$(rpm -qip output/mc0d-*.rpm  | grep Version | awk '{print $3}')
+        code: export APP_VERSION=$(grep Version mc0d.spec | awk '{print $2}')
     - github-create-release:
         token: $GITHUB_TOKEN
         tag: $APP_VERSION
