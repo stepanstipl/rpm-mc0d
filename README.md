@@ -2,6 +2,8 @@
 # rpm-mc0d
 RPM packages for mc0d - https://github.com/puppetlabs/mc0d, MCollective 0mq broker. 
 
+test Wercker pull
+
 *Currently building from my fork https://github.com/stepanstipl/mc0d which has some fixes for CentOS and 0mq 4.1*
 
 Interesting files
